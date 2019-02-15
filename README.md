@@ -3,7 +3,6 @@
 Hello and welcome to Reco APIs page!
 Here you will find all the information you need to implement, integrate, test or do other fund stuff with our APIs.
 
-
 ### 1. Sandbox API Key 
 Begin by contacting Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) and ask for a sandbox api key.
 ### 2. Sandbox API
