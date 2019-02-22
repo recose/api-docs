@@ -121,6 +121,34 @@ curl -v \
   }'
 ```
 
+## Create sms invite
+
+To create a sms invite call:
+
+```
+https://api.reco.se/invite/sms/venue/{venue-id}
+```
+with payload:
+
+```
+{
+  "invites": [
+    {
+      "mobile": "073000000",
+      "firstName": "John",
+      "lastName": "Doe",
+      "metadata": [{
+      	"key": "customerId",
+      	"value": "13348fa8-f53e-4b1b-91f5-0383f454f58d"
+      }, {
+      	"key": "category",
+      	"value": "books"
+      }]
+    }
+  ]
+}
+```
+
 #### Error codes
 
 Error codes could be read from `errors[].errorCode` in the response from the API:
