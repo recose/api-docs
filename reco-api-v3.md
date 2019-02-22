@@ -95,6 +95,8 @@ It is possible to send metadata with the invites. E.g to categorize the reviews 
 }
 ```
 
+`customerId` is used to identify the customer or the order, so that Reco can later on measure how my of your clients have been contacted about writing reviews.
+
 ### Send with scheduled
 
 If you want to postpone the invites you include sendDateFrom in a scheduled object with the request.
@@ -118,8 +120,6 @@ curl -v \
     }
   }'
 ```
-
-`customerId` i used to identify the customer or the order, so that Reco can later on measure how my of your clients have been contacted about writing reviews.
 
 #### Error codes
 
