@@ -33,7 +33,7 @@ The data sent in the request should look like:
 
 It's possible to send multiple invites in one request
 
-#### Example call
+#### Email example call
 
 ```
 curl -v \
@@ -50,7 +50,7 @@ curl -v \
   }'
 ```
 
-#### Example answer
+#### Email example answer
 
 If the request is successful the API will anser with status `200 OK`.
 
@@ -128,7 +128,7 @@ To create a sms invite call:
 ```
 https://api.reco.se/invite/sms/venue/{venue-id}
 ```
-#### Example call
+#### Sms example call
 
 ```
 curl -v \
