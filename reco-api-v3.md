@@ -128,15 +128,19 @@ To create a sms invite call:
 ```
 https://api.reco.se/invite/sms/venue/{venue-id}
 ```
-with payload:
+#### Example call
 
 ```
-{
-  "invites": [
-    {
-      "mobile": "073000000",
+curl -v \
+  -XPOST \
+  -H "Content-Type: application/json" \
+  -H "X-Reco-ApiKey: 3x3mp3l \
+  "https://api.reco.se/invite/sms/venue/123" \
+  -d '{
+    "invites": [{
+      "mobile": "0730000000",
       "firstName": "John",
-      "lastName": "Doe",
+      "lastName": "Doe"
       "metadata": [{
       	"key": "customerId",
       	"value": "13348fa8-f53e-4b1b-91f5-0383f454f58d"
@@ -144,9 +148,8 @@ with payload:
       	"key": "category",
       	"value": "books"
       }]
-    }
-  ]
-}
+     }]
+  }'
 ```
 
 #### Error codes
