@@ -77,7 +77,7 @@ If the API-key is wrong the API will answer with status `403 Forbidden`.
 
 ## Send with metadata
 
-It is possible to send metadata with the invites. E.g to categorize the reviews later on.
+It is possible to send metadata with the invites e.g to categorize the reviews later on.
 
 ```
 {
