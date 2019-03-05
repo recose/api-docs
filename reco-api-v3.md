@@ -1,3 +1,6 @@
+---
+title: Untitled Page
+---
 # Reco API v3 Documentation
 
 ## Create email invite
@@ -10,14 +13,14 @@ https://api.reco.se/invite/mail/venue/{venue-id}
 
 Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) will help you with what `venue-id` belongs to your company.
 
-#### Required Headers 
+### Required Headers 
 
 | Header        | Värde            | Beskrivning |
 | ------------- | ---------------- | ----- |
 | X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact kundtjanst@reco.se if you do not have an API-key. |
 | Content-Type  | application/json |  |
 
-#### POST Payload
+### POST Payload
 
 The data sent in the request should look like:
 
@@ -33,7 +36,7 @@ The data sent in the request should look like:
 
 It's possible to send multiple invites in one request
 
-#### Example call
+### Example call
 
 ```
 curl -v \
@@ -50,7 +53,7 @@ curl -v \
   }'
 ```
 
-#### Example answer
+### Example answer
 
 If the request is successful the API will anser with status `200 OK`.
 
@@ -72,7 +75,7 @@ If the request is successful the API will anser with status `200 OK`.
 
 If the API-key is wrong the API will answer with status `403 Forbidden`.
 
-### Send with metadata
+## Send with metadata
 
 It is possible to send metadata with the invites. E.g to categorize the reviews later on.
 
@@ -95,7 +98,7 @@ It is possible to send metadata with the invites. E.g to categorize the reviews 
 }
 ```
 
-### Send with scheduled
+## Send scheduled
 
 If you want to postpone the invites you include sendDateFrom in a scheduled object with the request.
 This will tell reco from when it's allowed to send the invites. Reco will then decide
@@ -121,7 +124,7 @@ curl -v \
 
 `customerId` i used to identify the customer or the order, so that Reco can later on measure how my of your clients have been contacted about writing reviews.
 
-#### Error codes
+## Error codes
 
 Error codes could be read from `errors[].errorCode` in the response from the API:
 
@@ -132,7 +135,7 @@ Error codes could be read from `errors[].errorCode` in the response from the API
 | 3   | The customer have already been asked to review |
 | 4   | The customer has opt-out from receiving review requests from Reco.se |
 
-### Register customer ids
+## Register customer ids
 
 To register cuomster ids you call:
 
@@ -141,14 +144,14 @@ https://api.reco.se/v3/customerids/{venue-id} -H 'Content-Type: application/json
 ```
 Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) will help you with what `venue-id` belongs to your company.
 
-#### Required Headers
+### Required Headers
 
 | Header        | Värde            | Beskrivning |
 | ------------- | ---------------- | ----- |
 | X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact kundtjanst@reco.se if you do not have an API-key. |
 | Content-Type  | application/json |  |
 
-#### POST Payload
+### POST Payload
 
 The data sent in the request should look like:
 
