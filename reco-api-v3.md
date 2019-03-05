@@ -100,7 +100,7 @@ It is possible to send metadata with the invites. E.g to categorize the reviews 
 
 ## Send scheduled
 
-If you want to postpone the invites you include sendDateFrom in a scheduled object with the request.
+If you want to postpone the invites you include `sendDateFrom` in a scheduled object with the request.
 This will tell reco from when it's allowed to send the invites. Reco will then decide
 the best day and time to send out the actual invites.
 
