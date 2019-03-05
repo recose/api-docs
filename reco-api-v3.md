@@ -17,7 +17,7 @@ Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) will h
 
 | Header        | Värde            | Beskrivning |
 | ------------- | ---------------- | ----- |
-| X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact kundtjanst@reco.se if you do not have an API-key. |
+| X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact [kundtjanst@reco.se](mailto:kundtjanst@reco.se) if you do not have an API-key. |
 | Content-Type  | application/json |  |
 
 ### POST Payload
