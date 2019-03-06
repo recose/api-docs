@@ -36,40 +36,40 @@ The data sent in the request should look like:
 
 It's possible to send multiple invites in one request
 
-### Example call
+### Email example call
 
 ```
 curl -v \
-  -XPOST \
-  -H "Content-Type: application/json" \
-  -H "X-Reco-ApiKey: 3x3mp3l \
-  "https://api.reco.se/invite/mail/venue/123" \
-  -d '{
-    "invites": [{
-      "email": "email@example.org",
-      "firstName": "John",
-      "lastName": "Doe"
-     }]
-  }'
+-XPOST \
+-H "Content-Type: application/json" \
+-H "X-Reco-ApiKey: 3x3mp3l \
+"https://api.reco.se/invite/mail/venue/123" \
+-d '{
+	"invites": [{
+		"email": "email@example.org",
+		"firstName": "John",
+		"lastName": "Doe"
+	 }]
+}'
 ```
 
-### Example answer
+### Email example answer
 
 If the request is successful the API will anser with status `200 OK`.
 
 ```
 {
-  "errors": [ {
-    "errorCode": 4,
-    "email": "john.doe@example.org",
-    "firstName": "John",
-    "lastName": "Doe"
-  } ],
-  "success": [{
-    "email": "jane.doe@example.org",
-    "firstName": "Jane",
-    "lastName": "Doe"
-  }]
+"errors": [ {
+	"errorCode": 4,
+	"email": "john.doe@example.org",
+	"firstName": "John",
+	"lastName": "Doe"
+} ],
+"success": [{
+	"email": "jane.doe@example.org",
+	"firstName": "Jane",
+	"lastName": "Doe"
+}]
 }
 ```
 
@@ -81,24 +81,26 @@ It is possible to send metadata with the invites e.g to categorize the reviews l
 
 ```
 {
-  "invites": [
-    {
-      "email": "email@example.org",
-      "firstName": "John",
-      "lastName": "Doe",
-      "metadata": [{
-      	"key": "customerId",
-      	"value": "13348fa8-f53e-4b1b-91f5-0383f454f58d"
-      }, {
-      	"key": "category",
-      	"value": "books"
-      }]
-    }
-  ]
+"invites": [
+	{
+		"email": "email@example.org",
+		"firstName": "John",
+		"lastName": "Doe",
+		"metadata": [{
+			"key": "customerId",
+			"value": "13348fa8-f53e-4b1b-91f5-0383f454f58d"
+		}, {
+			"key": "category",
+			"value": "books"
+		}]
+	}
+]
 }
 ```
 
-## Send scheduled
+`customerId` is used to identify the customer or the order, so that Reco can later on measure how my of your clients have been contacted about writing reviews.
+
+## Schedule invites
 
 If you want to postpone the invites you include `sendDateFrom` in a scheduled object with the request.
 This will tell reco from when it's allowed to send the invites. Reco will then decide
@@ -106,23 +108,52 @@ the best day and time to send out the actual invites.
 
 ```
 curl -v \
-  -XPOST \
-  -H "Content-Type: application/json" \
-  -H "X-Reco-ApiKey: 3x3mp3l \
-  "https://api.reco.se/invite/mail/venue/123" \
-  -d '{
-    "invites": [{
-      "email": "email@example.org",
-      "firstName": "John",
-      "lastName": "Doe"
-     }],
-     "scheduled": {
-      "sendDateFrom":"2018-01-20"
-    }
-  }'
+-XPOST \
+-H "Content-Type: application/json" \
+-H "X-Reco-ApiKey: 3x3mp3l \
+"https://api.reco.se/invite/mail/venue/123" \
+-d '{
+	"invites": [{
+		"email": "email@example.org",
+		"firstName": "John",
+		"lastName": "Doe"
+	 }],
+	 "scheduled": {
+		"sendDateFrom":"2018-01-20"
+	}
+}'
 ```
 
-`customerId` i used to identify the customer or the order, so that Reco can later on measure how my of your clients have been contacted about writing reviews.
+## Create sms invite
+
+To create a sms invite call:
+
+```
+https://api.reco.se/invite/sms/venue/{venue-id}
+```
+#### Sms example call
+
+```
+curl -v \
+-XPOST \
+-H "Content-Type: application/json" \
+-H "X-Reco-ApiKey: 3x3mp3l \
+"https://api.reco.se/invite/sms/venue/123" \
+-d '{
+	"invites": [{
+		"mobile": "0730000000",
+		"firstName": "John",
+		"lastName": "Doe"
+		"metadata": [{
+			"key": "customerId",
+			"value": "13348fa8-f53e-4b1b-91f5-0383f454f58d"
+		}, {
+			"key": "category",
+			"value": "books"
+		}]
+	 }]
+}'
+```
 
 ## Error codes
 
