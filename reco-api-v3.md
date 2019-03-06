@@ -1,5 +1,5 @@
 ---
-title: Untitled Page
+title: Reco API v3 Documentation
 ---
 # Reco API v3 Documentation
 
@@ -15,7 +15,7 @@ Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) will h
 
 ### Required Headers 
 
-| Header        | Värde            | Beskrivning |
+| Header        | Value            | Description |
 | ------------- | ---------------- | ----- |
 | X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact [kundtjanst@reco.se](mailto:kundtjanst@reco.se) if you do not have an API-key. |
 | Content-Type  | application/json |  |
@@ -159,12 +159,12 @@ curl -v \
 
 Error codes could be read from `errors[].errorCode` in the response from the API:
 
-| Kod | Description |
-| --- | ----------- |
-| 1   | Internal error |
-| 2   | Wrong input params |
-| 3   | The customer have already been asked to review |
-| 4   | The customer has opt-out from receiving review requests from Reco.se |
+| Code | Description |
+| ---- | ----------- |
+| 1    | Internal error |
+| 2    | Wrong input params |
+| 3    | The customer have already been asked to review |
+| 4    | The customer has opt-out from receiving review requests from Reco.se |
 
 ## Register customer ids
 
@@ -177,7 +177,7 @@ Reco's customer service ([kundtjanst@reco.se](mailto:kundtjanst@reco.se)) will h
 
 ### Required Headers
 
-| Header        | Värde            | Beskrivning |
+| Header        | Value            | Description |
 | ------------- | ---------------- | ----- |
 | X-Reco-ApiKey |                  | The API-key that you received from Reco.se. Please contact kundtjanst@reco.se if you do not have an API-key. |
 | Content-Type  | application/json |  |
@@ -195,4 +195,3 @@ The data sent in the request should look like:
   ]
 }
 ```
-
