@@ -1,5 +1,5 @@
 ---
-title: Untitled Page
+title: Reco API Documentation
 ---
 # Reco APIs
 
@@ -19,4 +19,3 @@ Here you will find all the information you need to implement, integrate, test or
    When you are done, contact Reco's customer service and tell them that you are ready to go live. Customer service will provide you with a production API key.
 
 Happy Coding!
-
